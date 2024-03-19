@@ -3,8 +3,13 @@ const mongoose = require('mongoose');
 const path = require("path");
 const bodyParser = require("body-parser");
 const moment = require("moment");
+const dotenv = require("dotenv");
 
-const PORT = 5000;
+dotenv.config();
+
+console.log(process.env.NAME) 
+
+const PORT = 5040;
 
 //init app
 const app = express();
