@@ -7,17 +7,15 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-console.log(process.env.NAME) 
-
-const PORT = 5040;
+const PORT = process.env.PORT || 3000;
 
 //init app
 const app = express();
 
-const connectionUrl = "mongodb://localhost:27017/todoDb";
+// const connectionUrl = "mongodb://localhost:27017/todoDb";
 
 mongoose
-    .connect(connectionUrl)
+    .connect(process.env.CONNECTION_URL)
     .then(() => console.log("Databases connection successful"))
     .catch((error) => console.log(error.message));
 
